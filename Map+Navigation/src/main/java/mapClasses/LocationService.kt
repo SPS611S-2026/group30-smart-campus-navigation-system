@@ -1,0 +1,4 @@
+package mapClasses
+
+class LocationService {
+}
