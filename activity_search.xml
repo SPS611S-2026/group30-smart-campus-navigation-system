@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_search.xml — Search Screen Layout
+    ───────────────────────────────────────────
+    This is the layout file for SearchActivity.java.
+    XML layouts define the visual structure of the screen.
+    Each element here maps to a View object in Java.
+
+    LAYOUT STRUCTURE:
+      LinearLayout (vertical, full screen)
+        └── ImageView  (NUST logo / app icon)
+        └── TextView   (App title: "NUST Smart Navigation")
+        └── TextView   (Subtitle: "Find any campus location")
+        └── EditText   (Search bar — user types here)
+        └── Button     (Search button)
+
+    KEY ATTRIBUTES EXPLAINED:
+      android:id       → used in Java with findViewById()
+      android:layout_width / height → sizing
+      wrap_content     → as big as the content inside
+      match_parent     → fill the parent container
+      android:hint     → placeholder text (greyed out)
+      android:inputType → tells keyboard what to show
+      android:imeOptions → shows "Search" on keyboard action key
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#F5F7FA">
+
+    <!-- App Icon / Logo -->
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="NUST Navigation App Logo" />
+
+    <!-- Main Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NUST Smart Navigation"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1A237E"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find any campus location instantly"
+        android:textSize="14sp"
+        android:textColor="#757575"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Search Input Field
+         android:inputType="text"        → single-line text keyboard
+         android:imeOptions="actionSearch" → shows "Search" key on keyboard
+         This is connected to etSearch in SearchActivity.java -->
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:hint="Search for a lecturer, lab, or place…"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/search_input_bg"
+        android:textSize="15sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Search Button
+         This is connected to btnSearch in SearchActivity.java
+         Clicking it calls performSearch() in the Activity. -->
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="Search"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#3F51B5"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Divider hint -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap a result to view it on the map"
+        android:textSize="12sp"
+        android:textColor="#BDBDBD" />
+
+</LinearLayout>

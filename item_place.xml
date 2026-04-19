@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    item_place.xml — Single Result Row Layout
+    ──────────────────────────────────────────
+    Place this in: res/layout/item_place.xml
+
+    This layout is inflated by PlaceAdapter for EACH result row.
+    RecyclerView creates as many of these as fit on screen,
+    then REUSES them as the user scrolls (that's the "Recycler" part).
+
+    LAYOUT STRUCTURE:
+      CardView (white card with shadow — the whole row)
+        └── LinearLayout (vertical stack inside the card)
+              └── TextView  (place name — bold, large)
+              └── TextView  (room + floor — medium)
+              └── TextView  (description — smaller, grey)
+
+    CARDVIEW:
+    CardView gives each row a Material Design card appearance:
+    white background, rounded corners, and a drop shadow (elevation).
+    This makes it visually clear that each row is tappable.
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#FFFFFF"
+    android:foreground="?attr/selectableItemBackground">
+    <!--
+        android:foreground="?attr/selectableItemBackground"
+        This adds the ripple / highlight effect when the card is tapped.
+        Makes the UI feel responsive to touch.
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Place Name — e.g. "Prof. Fabianus Ihemba Office"
+             Connected to tvPlaceName in PlaceAdapter.PlaceViewHolder -->
+        <TextView
+            android:id="@+id/tvPlaceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place Name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:layout_marginBottom="4dp" />
+
+        <!-- Room + Floor — e.g. "Room: Room 101  •  Floor: 1"
+             Connected to tvPlaceRoom in PlaceAdapter.PlaceViewHolder -->
+        <TextView
+            android:id="@+id/tvPlaceRoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Room info"
+            android:textSize="13sp"
+            android:textColor="#3F51B5"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Description — e.g. "Lecturer office for Software Development"
+             Connected to tvPlaceDesc in PlaceAdapter.PlaceViewHolder -->
+        <TextView
+            android:id="@+id/tvPlaceDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="13sp"
+            android:textColor="#757575"
+            android:maxLines="2"
+            android:ellipsize="end" />
+        <!--
+            android:maxLines="2"    → cap at 2 lines for uniform row height
+            android:ellipsize="end" → adds "…" if text is cut off
+        -->
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

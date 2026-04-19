@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_results.xml — Results Screen Layout
+    ─────────────────────────────────────────────
+    Layout for ResultsActivity.java.
+
+    LAYOUT STRUCTURE:
+      RelativeLayout (full screen)
+        └── TextView   (title: "Results for: …")
+        └── ProgressBar (spinner shown while loading)
+        └── TextView   (shown only when no results found)
+        └── RecyclerView (scrollable list of Place cards)
+
+    RECYCLERVIEW:
+    The RecyclerView is the key widget here. It displays
+    a scrollable, memory-efficient list of results.
+    PlaceAdapter.java feeds Place data into each row,
+    and item_place.xml defines what each row looks like.
+
+    VISIBILITY TOGGLING:
+    In ResultsActivity.java we toggle between:
+      • progressBar visible  → loading
+      • rvResults visible    → results found
+      • tvNoResults visible  → no results found
+-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <!-- Results heading — updated in Java with the query text -->
+    <TextView
+        android:id="@+id/tvResultsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search Results"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#1A237E"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:background="#FFFFFF"
+        android:id="@+id/tvResultsTitle" />
+
+    <!-- Loading spinner — visible while ViewModel fetches results
+         android:visibility="gone" = hidden by default (takes no space) -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <!-- Shown when search returns 0 results -->
+    <TextView
+        android:id="@+id/tvNoResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="No locations found.\nTry a different search term."
+        android:textSize="15sp"
+        android:textColor="#9E9E9E"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <!-- RecyclerView — the scrollable list of Place result cards
+         Each row is inflated from item_place.xml by PlaceAdapter.
+         layout_below positions it under the title bar. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvResultsTitle"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false" />
+
+</RelativeLayout>

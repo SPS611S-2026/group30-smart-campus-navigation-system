@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AndroidManifest.xml — App Configuration
+    ─────────────────────────────────────────
+    The manifest is the app's "identity card" for the OS.
+    It declares:
+      1. Permissions the app needs
+      2. Every Activity (screen) in the app
+      3. Which Activity opens first (the LAUNCHER)
+
+    WITHOUT THIS FILE:
+      - Permissions would be silently denied even if requested
+      - Activities would crash with ActivityNotFoundException
+      - The app wouldn't appear in the device's app drawer
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myspps">
+
+    <!-- ════════════════════════════════════════════════════════
+         PERMISSIONS
+         ════════════════════════════════════════════════════════ -->
+
+    <!--
+        INTERNET — needed to load map tiles from OpenStreetMap
+        or Google Maps servers.
+        TYPE: Normal — granted automatically, no user prompt.
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+        ACCESS_NETWORK_STATE — lets us check if the device is
+        online before making network requests. Prevents crashes
+        when the user has no data connection.
+        TYPE: Normal — granted automatically.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+        ACCESS_FINE_LOCATION — precise GPS (within ~5 metres).
+        Required for turn-by-turn navigation.
+        TYPE: Dangerous — must be requested at runtime.
+        See: PermissionManager.java
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!--
+        ACCESS_COARSE_LOCATION — approximate location via
+        Wi-Fi / mobile networks (~100m accuracy). Used as
+        fallback when GPS signal is weak (indoors).
+        TYPE: Dangerous — must be requested at runtime.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!--
+        GPS hardware feature declaration.
+        android:required="false" means the app can still INSTALL
+        on devices without GPS — they just won't get navigation.
+        Without this, the Play Store would block installation on
+        non-GPS devices (tablets, some budget phones).
+    -->
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+
+    <!-- ════════════════════════════════════════════════════════
+         APPLICATION
+         ════════════════════════════════════════════════════════ -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="NUST Smart Nav"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MySPPS">
+
+        <!-- ────────────────────────────────────────────────────
+             MainActivity — Bootstrap / Entry Point
+             ────────────────────────────────────────────────────
+             The LAUNCHER intent-filter makes this the first
+             screen that opens when the app icon is tapped.
+             It requests permissions and immediately forwards
+             the user to SearchActivity, then finishes itself. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ────────────────────────────────────────────────────
+             SearchActivity — First real screen (Person 2 / 4)
+             ────────────────────────────────────────────────────
+             android:exported="false" → cannot be launched from
+             outside the app (security best practice).
+             No parentActivity because it's the root screen. -->
+        <activity
+            android:name=".ui.SearchActivity"
+            android:exported="false"
+            android:label="Search" />
+
+        <!-- ────────────────────────────────────────────────────
+             ResultsActivity — Results list (Person 2 / 4)
+             ────────────────────────────────────────────────────
+             android:parentActivityName enables the Up/Back arrow
+             in the toolbar automatically. -->
+        <activity
+            android:name=".ui.ResultsActivity"
+            android:exported="false"
+            android:label="Results"
+            android:parentActivityName=".ui.SearchActivity" />
+
+        <!-- ────────────────────────────────────────────────────
+             MapActivity — Navigation map (Person 3 / 4)
+             ────────────────────────────────────────────────────
+             android:configChanges prevents the map from being
+             destroyed and re-created on screen rotation.
+             This keeps the map in place when the phone rotates. -->
+        <activity
+            android:name=".ui.MapActivity"
+            android:exported="false"
+            android:label="Navigate"
+            android:configChanges="orientation|screenSize"
+            android:parentActivityName=".ui.ResultsActivity" />
+
+    </application>
+
+</manifest>
