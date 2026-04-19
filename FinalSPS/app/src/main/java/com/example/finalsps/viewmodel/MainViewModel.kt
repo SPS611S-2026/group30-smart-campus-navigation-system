@@ -1,5 +1,8 @@
 package com.example.finalsps.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.finalsps.dataClasses.Place
 import com.example.finalsps.dataClasses.UiState
@@ -7,13 +10,17 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlin.collections.toMutableList
 
 class MainViewModel : ViewModel() {
+    var isNavigating by mutableStateOf(false)
+
 
     private val samplePlaces = listOf(
         Place(
-            id = "1",
+            id = 1,
             name = "Science Building A101",
+            description = "Software Development Lecturer Office",
             roomNumber = "A101",
             floor = "Ground Floor",
             building = "Science Building",
@@ -24,8 +31,9 @@ class MainViewModel : ViewModel() {
             directions = listOf("Enter building", "Go straight", "Left side")
         ),
         Place(
-            id = "2",
+            id = 2,
             name = "Engineering B204",
+            description = "Software Development Lecturer Office",
             roomNumber = "B204",
             floor = "2nd Floor",
             building = "Engineering Block",
@@ -77,5 +85,11 @@ class MainViewModel : ViewModel() {
         }
 
         _uiState.update { it.copy(bookmarked = list) }
+    }
+
+    fun startNavigation() {
+        _uiState.update {
+            it.copy(isNavigating = true)
+        }
     }
 }

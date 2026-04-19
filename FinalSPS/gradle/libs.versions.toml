@@ -13,6 +13,7 @@ firebaseFirestoreKtx = "26.1.2"
 maps = "3.1.0-beta"
 playServicesMaps = "20.0.0"
 playServicesPhenotype = "17.0.0"
+lifecycleViewmodelKtx = "2.10.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +35,7 @@ firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-fires
 maps = { group = "com.google.android.libraries.maps", name = "maps", version.ref = "maps" }
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 play-services-phenotype = { group = "com.google.android.gms", name = "play-services-phenotype", version.ref = "playServicesPhenotype" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

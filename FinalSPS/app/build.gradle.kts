@@ -55,7 +55,7 @@ dependencies {
 
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
-
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
     // Jetpack Compose Navigation
     implementation("androidx.navigation:navigation-compose:2.8.0")
 
@@ -76,6 +76,7 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     implementation(libs.play.services.maps)
     implementation(libs.play.services.phenotype)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
 
 

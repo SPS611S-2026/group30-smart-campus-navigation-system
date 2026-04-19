@@ -31,12 +31,17 @@ fun getRoute(
         override fun onResponse(call: Call, response: Response) {
 
             val body = response.body?.string() ?: return
+
             val json = JSONObject(body)
 
             val route = json.getJSONArray("routes").getJSONObject(0)
 
             val distance = route.getDouble("distance")
             val duration = route.getDouble("duration")
+
+
+
+
 
             val coords = route
                 .getJSONObject("geometry")

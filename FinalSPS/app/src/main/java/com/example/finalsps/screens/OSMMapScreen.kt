@@ -79,43 +79,4 @@ fun OSMMapview(
         }
     }
 }
-//navigation for live map
-@Composable
-fun NavigationMapScreen(destination: Place?) {
 
-    AndroidView(factory = { context ->
-
-        Configuration.getInstance().load(
-            context,
-            context.getSharedPreferences("osmdroid", 0)
-        )
-
-        val map = MapView(context)
-
-        map.setTileSource(TileSourceFactory.MAPNIK)
-        map.setMultiTouchControls(true)
-
-        val dest = destination?.let {
-            GeoPoint(it.latitude, it.longitude)
-        } ?: GeoPoint(-22.567, 17.074)
-
-        val marker = Marker(map).apply {
-            position = dest
-            title = destination?.name ?: "Destination"
-        }
-
-        val line = Polyline().apply {
-            outlinePaint.color = Color.BLUE
-            outlinePaint.strokeWidth = 6f
-            setPoints(listOf(dest))
-        }
-
-        map.overlays.add(marker)
-        map.overlays.add(line)
-
-        map.controller.setZoom(17.5)
-        map.controller.setCenter(dest)
-
-        map
-    })
-}

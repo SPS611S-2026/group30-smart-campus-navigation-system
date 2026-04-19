@@ -1,8 +1,9 @@
 package com.example.finalsps.dataClasses
 
 data class Place(
-    val id: String,
+    val id: Int,
     val name: String,
+    val description: String,
     val roomNumber: String,
     val floor: String,
     val building: String,
