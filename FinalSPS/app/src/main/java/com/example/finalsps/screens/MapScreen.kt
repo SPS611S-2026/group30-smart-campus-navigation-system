@@ -20,7 +20,7 @@ fun MapScreen(
     onStartNavigation: () -> Unit
 ) {
 
-    val place: Place? = uiState.selectedPlace
+    val place = uiState.selectedPlace
     Button(onClick = onBack) {
         Text("Back")
     }

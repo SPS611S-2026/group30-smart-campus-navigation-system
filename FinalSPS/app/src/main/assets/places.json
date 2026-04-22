@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Prof. Fabianus Ihemba Office",
+    "latitude": -22.565455409331044,
+    "longitude":  17.07676288954483,
+    "description": "Lecturer office for Software Development consultations",
+    "roomNumber": "Room 101",
+    "floorNumber": "1"
+  },
+  {
+    "id": 2,
+    "name": "reflection room",
+    "latitude": -22.56416012406696,
+    "longitude":  17.07530404661234,
+    "description": "Lecturer office for Advanced Programming",
+    "roomNumber": "f98",
+    "floorNumber": "2"
+  },
+  {
+    "id": 3,
+    "name": "FCI lab 11",
+    "latitude": -22.565422666279474,
+    "longitude": 17.07679,
+    "description": "FCI lab 11 in the office building",
+    "roomNumber": "FCI Lab 11",
+    "floorNumber": "last floor"
+  },
+  {
+    "id": 4,
+    "name": "Auditorium 2",
+    "latitude": -22.565006478529025,
+    "longitude":  17.07500187352933,
+    "description": "Lecturer office for Systems Development",
+    "roomNumber": "Room 104",
+    "floorNumber": "1"
+  },
+  {
+    "id": 5,
+    "name": "Auditorium south",
+    "latitude": -22.565667520194218,
+    "longitude": 17.074361794889395,
+    "description": "Main campus auditorium used for events and guest lectures",
+    "roomNumber": "Auditorium A",
+    "floorNumber": "Ground"
+  },
+  {
+    "id": 6,
+    "name": "Security Lab K7",
+    "latitude": -22.566236061567075,
+    "longitude": 17.075809823543825,
+    "description": "Security lab west of the main gate ",
+    "roomNumber": "K7",
+    "floorNumber": "ground"
+  },
+
+
+  {
+    "id": 8,
+    "name": "Student Cafeteria",
+    "latitude": -22.566092101882177,
+    "longitude": 17.07296293187734,
+    "description": "Cafeteria serving meals and refreshments for students",
+    "roomNumber": "Cafe 1",
+    "floorNumber": "Ground"
+  }
+]

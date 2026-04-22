@@ -54,12 +54,14 @@ fun SearchScreen(
 
             LazyColumn {
                 items(uiState.results) { place ->
+
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(6.dp)
                             .clickable { onSelect(place) }
                     ) {
+
                         Column(Modifier.padding(12.dp)) {
                             Text(place.name, fontWeight = FontWeight.Bold)
                             Text("Room: ${place.roomNumber}")
