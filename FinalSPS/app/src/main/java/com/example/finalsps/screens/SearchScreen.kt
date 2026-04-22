@@ -66,6 +66,10 @@ fun SearchScreen(
                             Text(place.name, fontWeight = FontWeight.Bold)
                             Text("Room: ${place.roomNumber}")
                             Text("Building: ${place.building}")
+                            Text("Floor: ${place.floorNumber}")
+                            Text("Description: ${place.description}"
+                            )
+
                         }
                     }
                 }

@@ -31,6 +31,7 @@ fun OSMMapview(
 
     Column {
 
+
         // MAP
         AndroidView(factory = { context ->
 
@@ -61,7 +62,7 @@ fun OSMMapview(
             modifier = Modifier.weight(1f)
         )
 
-        // CONTROLS (THIS IS WHAT WAS MISSING)
+
         Row(
             modifier = Modifier
                 .fillMaxWidth()

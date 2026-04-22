@@ -6,7 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.finalsps.dataClasses.Place
-import com.example.finalsps.dataClasses.PlaceRepository
+import com.example.finalsps.classes.PlaceRepository
 import com.example.finalsps.dataClasses.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

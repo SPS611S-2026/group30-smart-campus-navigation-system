@@ -2,7 +2,6 @@ import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.kotlin.dsl.implementation
 
 
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)

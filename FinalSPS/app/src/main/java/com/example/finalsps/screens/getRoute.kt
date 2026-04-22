@@ -1,11 +1,11 @@
 package com.example.finalsps.screens
 
-import org.osmdroid.util.GeoPoint
-import okhttp3.*
-import org.json.JSONObject
-import java.io.IOException
 import android.os.Handler
 import android.os.Looper
+import okhttp3.*
+import org.json.JSONObject
+import org.osmdroid.util.GeoPoint
+import java.io.IOException
 
 fun getRoute(
     start: GeoPoint,
@@ -13,6 +13,9 @@ fun getRoute(
     onResult: (List<GeoPoint>, List<String>, Double, Double) -> Unit
 ) {
 
+    // -----------------------------
+    // OSRM ROUTING API URL
+    // -----------------------------
     val url =
         "https://router.project-osrm.org/route/v1/walking/" +
                 "${start.longitude},${start.latitude};" +
@@ -28,36 +31,30 @@ fun getRoute(
     client.newCall(request).enqueue(object : Callback {
 
         override fun onFailure(call: Call, e: IOException) {
-            e.printStackTrace()
 
-            // Return safe fallback on main thread
+            // Always return safe fallback on UI thread
             Handler(Looper.getMainLooper()).post {
-                onResult(
-                    emptyList(),
-                    listOf("Failed to load route"),
-                    0.0,
-                    0.0
-                )
+                onResult(emptyList(), listOf("Route failed"), 0.0, 0.0)
             }
         }
 
         override fun onResponse(call: Call, response: Response) {
 
             val body = response.body?.string() ?: return
-
             val json = JSONObject(body)
 
-            val routesArray = json.getJSONArray("routes")
-            if (routesArray.length() == 0) return
+            val routes = json.getJSONArray("routes")
 
-            val route = routesArray.getJSONObject(0)
+            if (routes.length() == 0) return
+
+            val route = routes.getJSONObject(0)
 
             val distance = route.getDouble("distance")
             val duration = route.getDouble("duration")
 
-            // =========================
-            // 🧭 DIRECTIONS (STEPS)
-            // =========================
+            // -----------------------------
+            // TURN BY TURN DIRECTIONS
+            // -----------------------------
             val stepsArray = route
                 .getJSONArray("legs")
                 .getJSONObject(0)
@@ -70,25 +67,23 @@ fun getRoute(
                 val step = stepsArray.getJSONObject(i)
 
                 val name = step.optString("name", "")
-                val maneuver = step
-                    .getJSONObject("maneuver")
-                    .optString("type", "")
+                val type = step.getJSONObject("maneuver").optString("type", "")
 
-                val instruction = when (maneuver) {
-                    "turn" -> if (name.isNotBlank()) "Turn onto $name" else "Turn"
-                    "depart" -> if (name.isNotBlank()) "Start on $name" else "Start"
+                val instruction = when (type) {
+
+                    "depart" -> "Start ${if (name.isNotBlank()) "on $name" else ""}"
+                    "turn" -> "Turn ${if (name.isNotBlank()) "onto $name" else ""}"
                     "arrive" -> "You have arrived"
-                    "merge" -> if (name.isNotBlank()) "Merge onto $name" else "Merge"
-                    "roundabout" -> "Enter roundabout"
-                    else -> if (name.isNotBlank()) "$maneuver on $name" else maneuver
+
+                    else -> if (name.isNotBlank()) "$type onto $name" else type
                 }
 
                 directions.add(instruction)
             }
 
-            // =========================
-            // 🗺️ POLYLINE (MAP ROUTE)
-            // =========================
+            // -----------------------------
+            // ROUTE POLYLINE POINTS
+            // -----------------------------
             val coords = route
                 .getJSONObject("geometry")
                 .getJSONArray("coordinates")
@@ -101,15 +96,13 @@ fun getRoute(
 
                 points.add(
                     GeoPoint(
-                        c.getDouble(1), // lat
-                        c.getDouble(0)  // lon
+                        c.getDouble(1),
+                        c.getDouble(0)
                     )
                 )
             }
 
-            // =========================
-            // 🔥 RETURN ON MAIN THREAD
-            // =========================
+            // Return results on main thread
             Handler(Looper.getMainLooper()).post {
                 onResult(points, directions, distance, duration)
             }

@@ -81,7 +81,7 @@ fun MapScreen(
 
                         Text("Building: ${place.building}")
                         Text("Room: ${place.roomNumber}")
-                        Text("Floor: ${place.floor}")
+                        Text("Floor: ${place.floorNumber}")
                         Text("Course: ${place.courseCode}")
                         Text("Lecturer: ${place.lecturer}")
 
