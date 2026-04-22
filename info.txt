@@ -1,0 +1,1 @@
+If application refuses to run, delete .idea and .gradle then close android studio and reopen the project from android studio
