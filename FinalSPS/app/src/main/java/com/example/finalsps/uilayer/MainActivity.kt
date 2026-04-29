@@ -2,34 +2,35 @@ package com.example.finalsps.uilayer
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.content.pm.PackageManager
+import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MyLocation
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.NavController
-import com.example.finalsps.dataClasses.Place
+import com.example.finalsps.components.CampusBottomNav
 import com.example.finalsps.nav.Screen
+import com.example.finalsps.screens.BookmarksScreen
+import com.example.finalsps.screens.NavigationMapScreen
 import com.example.finalsps.screens.OSMMapview
 import com.example.finalsps.screens.SearchScreen
-import com.example.finalsps.screens.NavigationMapScreen
-import com.example.finalsps.screens.BookmarksScreen
-import com.example.finalsps.viewmodel.MainViewModel
 import com.example.finalsps.ui.theme.FinalSPSTheme
-import com.example.finalsps.components.CampusBottomNav
-import android.os.Bundle
+import com.example.finalsps.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
@@ -119,3 +120,9 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+}
+
+
+
+

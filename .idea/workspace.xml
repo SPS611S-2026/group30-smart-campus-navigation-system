@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de4ff9b3-2ec9-4938-99e7-e3634280af03" name="Changes" comment="Added routing, optimized imports,added permission requests for gps, added directions bar, added live gps&#10;fixed search function&#10;fixed manifest file&#10;added routeViewModel.kt for routing line view&#10;added cancel route button">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/group30-smart-campus-navigation-system.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/AndroidProjectSystem.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/deploymentTargetSelector.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/deviceManager.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/.idea/studiobot.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/screens/MapScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/screens/OSMMapScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/screens/OSMMapScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/screens/getRoute.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/screens/getRoute.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/uilayer/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/uilayer/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/viewmodel/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/viewmodel/MainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/viewmodel/routeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/viewmodel/routeViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +75,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Android App.app.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -90,6 +84,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "branch3",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Waza Milijala/OneDrive/new/OneDrive/Desktop/MAP_Project/group30-smart-campus-navigation-system"

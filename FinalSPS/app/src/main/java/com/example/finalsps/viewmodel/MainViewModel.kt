@@ -1,15 +1,11 @@
 package com.example.finalsps.viewmodel
 
 import android.content.Context
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.finalsps.dataClasses.Place
 import com.example.finalsps.classes.PlaceRepository
+import com.example.finalsps.dataClasses.Place
 import com.example.finalsps.dataClasses.UiState
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 

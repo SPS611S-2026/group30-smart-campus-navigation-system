@@ -31,8 +31,9 @@ fun getRoute(
     client.newCall(request).enqueue(object : Callback {
 
         override fun onFailure(call: Call, e: IOException) {
-
+            // ----------------------------------------
             // Always return safe fallback on UI thread
+            // ----------------------------------------
             Handler(Looper.getMainLooper()).post {
                 onResult(emptyList(), listOf("Route failed"), 0.0, 0.0)
             }
@@ -101,8 +102,9 @@ fun getRoute(
                     )
                 )
             }
-
+            // -----------------------------
             // Return results on main thread
+            // -----------------------------
             Handler(Looper.getMainLooper()).post {
                 onResult(points, directions, distance, duration)
             }

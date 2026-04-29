@@ -11,12 +11,15 @@ import org.osmdroid.util.GeoPoint
 
 class RouteViewModel : ViewModel() {
 
-
+    // -----------------------------
     // Current route points (polyline)
+    // -----------------------------
     private val _routePoints = MutableStateFlow<List<GeoPoint>>(emptyList())
     val routePoints: StateFlow<List<GeoPoint>> = _routePoints
 
+    // -----------------------------
     // Directions list
+    // -----------------------------
     private val _directions = MutableStateFlow<List<String>>(emptyList())
     val directions: StateFlow<List<String>> = _directions
 
@@ -31,9 +34,9 @@ class RouteViewModel : ViewModel() {
         }
     }
 
-
+    // -----------------------------
     // CANCEL ROUTE
-
+    // -----------------------------
     fun cancelRoute() {
         _routePoints.value = emptyList()
         _directions.value = emptyList()
