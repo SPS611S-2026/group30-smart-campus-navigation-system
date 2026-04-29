@@ -1,0 +1,4 @@
+[library]
+group = "androidx.compose.material"
+name = "material-icons-extended"
+version = "1.2.0-alpha02"
