@@ -1,4 +1,0 @@
-package mapClasses
-
-class LocationService {
-}
