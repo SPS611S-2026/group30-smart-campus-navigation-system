@@ -9,20 +9,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de4ff9b3-2ec9-4938-99e7-e3634280af03" name="Changes" comment="Added routing, optimized imports,added permission requests for gps, added directions bar, added live gps&#10;fixed search function&#10;fixed manifest file&#10;added routeViewModel.kt for routing line view&#10;added cancel route button">
-      <change afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/components/CampusBottomNav.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/components/CampusBottomNav.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/nav/screen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/InAppNav/screenNav.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/screens/NavigationScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/screens/NavigationScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/screens/getRoute.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/components/getRoute.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/uilayer/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/viewmodel/routeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FinalSPS/app/src/main/java/com/example/finalsps/viewmodel/routeViewModel.kt" afterDir="false" />
-    </list>
+    <list default="true" id="de4ff9b3-2ec9-4938-99e7-e3634280af03" name="Changes" comment="moved getRoute to Components package,&#10;Renamed screen.kt to screenNav.kt and renamed package to InAppNav" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -292,14 +279,23 @@
       <option name="project" value="LOCAL" />
       <updated>1776875845161</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="moved getRoute to Components package,&#10;Renamed screen.kt to screenNav.kt and renamed package to InAppNav">
+      <option name="closed" value="true" />
+      <created>1778161603274</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1778161603275</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fully intergrated all componets(osm droid map, search function and ui screens)&#10;removed unnecessary kts files, converted java to kotlin , fixed, added ide settings to accomodate gradle files&#10;updated manifest to access mainActivity.kts as app entrance" />
     <MESSAGE value="Added marker to mark locations,&#10;updated locations to use real coordinates,&#10;navigate button on map now points marker to coordinates,&#10;updated MainViewModel.kt to use PlaceRepository.kt correctly instead of crashing" />
     <MESSAGE value="Added routing, optimized imports,added permission requests for gps, added directions bar, added live gps&#10;fixed search function&#10;fixed manifest file&#10;added routeViewModel.kt for routing line view&#10;added cancel route button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added routing, optimized imports,added permission requests for gps, added directions bar, added live gps&#10;fixed search function&#10;fixed manifest file&#10;added routeViewModel.kt for routing line view&#10;added cancel route button" />
+    <MESSAGE value="moved getRoute to Components package,&#10;Renamed screen.kt to screenNav.kt and renamed package to InAppNav" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved getRoute to Components package,&#10;Renamed screen.kt to screenNav.kt and renamed package to InAppNav" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
