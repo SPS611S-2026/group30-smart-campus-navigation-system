@@ -1,4 +1,4 @@
-package com.example.finalsps.screens
+package com.example.finalsps.components
 
 import android.os.Handler
 import android.os.Looper

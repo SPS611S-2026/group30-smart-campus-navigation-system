@@ -1,4 +1,4 @@
-package com.example.finalsps.uilayer
+package com.example.finalsps
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -24,7 +24,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.finalsps.components.CampusBottomNav
-import com.example.finalsps.nav.Screen
+import com.example.finalsps.InAppNav.Screen
 import com.example.finalsps.screens.BookmarksScreen
 import com.example.finalsps.screens.NavigationMapScreen
 import com.example.finalsps.screens.OSMMapview
@@ -76,10 +76,10 @@ class MainActivity : ComponentActivity() {
                     NavHost(
                         navController = navController,
                         startDestination = Screen.Map.route,
-                        modifier = Modifier.padding(padding)
+                        modifier = Modifier.Companion.padding(padding)
                     ) {
                         composable(Screen.Map.route) {
-                            Box(modifier = Modifier.fillMaxSize()) {
+                            Box(modifier = Modifier.Companion.fillMaxSize()) {
                                 OSMMapview(
                                     onSearch = { navController.navigate(Screen.Search.route) },
                                     onNavigate = { navController.navigate(Screen.Nav.route) }
@@ -122,7 +122,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-
-

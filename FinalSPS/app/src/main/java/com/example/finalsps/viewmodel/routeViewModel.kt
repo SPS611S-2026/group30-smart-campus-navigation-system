@@ -1,12 +1,10 @@
 package com.example.finalsps.viewmodel
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.finalsps.dataClasses.Place
-import com.example.finalsps.screens.getRoute
+import com.example.finalsps.components.getRoute
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 import org.osmdroid.util.GeoPoint
 
 class RouteViewModel : ViewModel() {

@@ -62,7 +62,7 @@ dependencies {
     // ViewModel for Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4")
 
-    // Optional but recommended
+
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.4")
 
 

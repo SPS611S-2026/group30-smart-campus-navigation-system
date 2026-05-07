@@ -1,7 +1,5 @@
 package com.example.finalsps.components
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.Map
@@ -16,7 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.finalsps.nav.Screen
+import com.example.finalsps.InAppNav.Screen
 
 @Composable
 fun CampusBottomNav(
